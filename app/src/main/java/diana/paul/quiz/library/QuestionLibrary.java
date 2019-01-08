@@ -16,18 +16,18 @@ public class QuestionLibrary {
     public ArrayList<Question> sortQuestion() {
         ArrayList<Question> sortedQuestions = new ArrayList<>();
         for (Question q : mQuestions) {
-            if (q.isOfCategory(category)) {
+            if (q.isCategory(category)) {
                 sortedQuestions.add(q);
             }
-            return sortedQuestions;
         }
+        return sortedQuestions;
     }
 
     public Question[] getQuestions(){
         Question[] que= new Question[20];
         int counter=0;
         Question question;
-        ArrayList<Question> sortedQuestions=this.sortQuestion(category);
+        ArrayList<Question> sortedQuestions=this.sortQuestion();
         int random;
         boolean flag=false;
         for(int i=0;i<20;i++){
@@ -44,7 +44,7 @@ public class QuestionLibrary {
             }
             flag=false;
         }
-        return quee;
+        return que;
     }
 
     public void setCategory(String cat){

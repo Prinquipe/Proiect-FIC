@@ -13,8 +13,7 @@ public class Question {
         _count++;
     }
 
-    @Override
-    public boolean isOfCategory(String cat){
+    public boolean isCategory(String cat){
 
         return category.equals(cat);
     }
@@ -48,8 +47,8 @@ public class Question {
     }
 
     public boolean equals(Object obj){
-        if(o instanceof Question) {
-            if(index==((Question)o).getIndex())
+        if(obj instanceof Question) {
+            if(index==((Question)obj).getIndex())
                 return true;
         }
         return false;
