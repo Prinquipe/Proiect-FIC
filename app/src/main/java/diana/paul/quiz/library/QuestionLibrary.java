@@ -23,26 +23,20 @@ public class QuestionLibrary {
         return sortedQuestions;
     }
 
-    public Question[] getQuestions(){
-        Question[] que= new Question[20];
+    public ArrayList<Question> getQuestions(){
+        ArrayList<Question> que= new ArrayList<>();
         int counter=0;
         Question question;
         ArrayList<Question> sortedQuestions=this.sortQuestion();
         int random;
         boolean flag=false;
         for(int i=0;i<20;i++){
-            while(!flag){
-                random = (int)Math.random() * sortedQuestions.size();
-                question = sortedQuestions.get(random);
-                for(int j=0;j<counter;j++){
-                    if(!question.equals(que[j])){
-                        que[counter]=question;
-                        ++counter;
-                        flag=true;
-                    }
+                random=(int)Math.round(Math.random())*sortedQuestions.size();
+                if(!que.contains(sortedQuestions.get(random))) {
+                    que.add(sortedQuestions.get(random));
                 }
-            }
-            flag=false;
+                else
+                    --i;
         }
         return que;
     }

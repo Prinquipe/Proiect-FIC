@@ -3,9 +3,7 @@ package diana.paul.quiz.library;
 import diana.paul.quiz.Answer;
 import diana.paul.quiz.Question;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Map;
-import java.util.Set;
+
 
 public class AnswerLibrary {
 
@@ -19,11 +17,24 @@ public class AnswerLibrary {
 
     public ArrayList<ArrayList<Answer>> getAnswers(){
         ArrayList<Answer> ansPool=this.sortAnswers();
-        ArrayList<Answer> shuffle= new ArrayList<>();
-        ArrayList<ArrayList<Answer>> mapper=new ArrayList<ArrayList<Answer>>();
+        ArrayList<Answer> shuffle=new ArrayList<>();
+        int aux;
+        ArrayList<ArrayList<Answer>> mapper=new ArrayList<>();
         for(Question q: questions){
-
+            shuffle.add(q.getCorrectAnswer());
+            for(int i=0;i<3;i++){
+                aux=(int)Math.round(Math.random())*ansPool.size();
+                if(!shuffle.contains(ansPool.get(aux))) {
+                    shuffle.add(ansPool.get(aux));
+                }
+                else
+                    --i;
+            }
+            shuffle=this.shuffleAlg(shuffle);
+            mapper.add(shuffle);
         }
+
+
         return mapper;
     }
 
@@ -35,6 +46,21 @@ public class AnswerLibrary {
             }
         }
         return sortedAnswer;
+    }
+
+    private ArrayList<Answer> shuffleAlg(ArrayList<Answer> a){
+        ArrayList<Answer> newArray= new ArrayList<>();
+        int aux;
+        for(int i=0;i<4;i++){
+            aux=(int)Math.round(Math.random())*a.size();
+            if(!newArray.contains(a.get(aux))){
+                newArray.add(a.get(aux));
+            }
+            else{
+                --i;
+            }
+        }
+        return newArray;
     }
 }
 
