@@ -34,6 +34,10 @@ public class Answer {
         return false;
     }
 
+    public int getIndex(){
+        return index;
+    }
+
     public boolean isOfCategory(String c){
         if(c.equals(category))
             return true;
