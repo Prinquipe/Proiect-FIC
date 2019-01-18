@@ -6,6 +6,8 @@
     <string name="cat1">Istorie</string>
     <string name="cat2">Programare</string>
     <string name="cat3">Trivia</string>
+    <string name="title_activity_scores">ScoresActivity</string>
+    <string name="scores">Score</string>
 
 
 </resources>
