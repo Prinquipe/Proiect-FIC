@@ -21,7 +21,7 @@ public class AnswerLibrary {
         int aux;
         ArrayList<ArrayList<Answer>> mapper=new ArrayList<>();
         for(Question q: questions){
-            shuffle.add(q.getCorrectAnswer());
+            shuffle.add(ansPool.get(q.getCorrectAnswer()));
             for(int i=0;i<3;i++){
                 aux=(int)Math.round(Math.random())*ansPool.size();
                 if(!shuffle.contains(ansPool.get(aux))) {

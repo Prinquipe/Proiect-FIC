@@ -4,13 +4,11 @@ public class Question {
     private String text;
     private String category;
     private int index;
-    private Answer correctAnswer;
+    private int correctAnswer;
 
     private static int _count=0;
 
-    public Question(String text, Answer a) {
-        this.text=text;
-        correctAnswer=a;
+    public Question() {
         index=_count;
         _count++;
     }
@@ -29,6 +27,14 @@ public class Question {
         return index;
     }
 
+    public void setText(String s){
+        text=s;
+    }
+
+    public void setCorrectAnswer(int i){
+        correctAnswer=i;
+    }
+
     public void setCategory(String c){
         category=c;
     }
@@ -37,7 +43,7 @@ public class Question {
         return category;
     }
 
-    public Answer getCorrectAnswer() { return correctAnswer; }
+    public int getCorrectAnswer() { return correctAnswer; }
 
     public boolean equals(Object obj){
         if(obj instanceof Question) {

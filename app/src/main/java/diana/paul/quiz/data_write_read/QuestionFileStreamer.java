@@ -7,5 +7,10 @@ public abstract class QuestionFileStreamer {
 
    public abstract String readFromQuestionFile();
 
+   public static QuestionFileStreamer getQuestionFileStreamer(){
+
+       return ConcreteQuestionFileStreamer.getConcreteQuestionFileStreamer();
+   }
+
 
 }

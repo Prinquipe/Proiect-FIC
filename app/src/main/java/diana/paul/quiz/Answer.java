@@ -25,15 +25,6 @@ public class Answer {
         return answer;
     }
 
-    @Override
-    public boolean equals( Object obj){
-        if(obj instanceof Answer){
-            if(index==((Answer)obj).index)
-                return true;
-        }
-        return false;
-    }
-
     public int getIndex(){
         return index;
     }
