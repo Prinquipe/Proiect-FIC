@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Quiz</string>
+    <string name="title_activity_category">CategoryActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="text">Selectati o categorie</string>
+    <string name="cat1">Istorie</string>
+    <string name="cat2">Programare</string>
+    <string name="cat3">Trivia</string>
+
+
 </resources>

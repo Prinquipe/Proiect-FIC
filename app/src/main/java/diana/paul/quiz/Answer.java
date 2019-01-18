@@ -21,17 +21,25 @@ public class Answer {
         answer=text;
     }
 
-    public String getAnswer(){
+    String getAnswer(){
         return answer;
     }
 
-    public int getIndex(){
+    int getIndex(){
         return index;
     }
 
     public boolean isOfCategory(String c){
         if(c.equals(category))
             return true;
+        return false;
+    }
+
+    public boolean equals(Object obj){
+        if(obj instanceof Answer){
+            if(((Answer)obj).getIndex()==index)
+                return true;
+        }
         return false;
     }
 }

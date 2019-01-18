@@ -45,6 +45,12 @@ public class Question {
 
     public int getCorrectAnswer() { return correctAnswer; }
 
+    public boolean isCorrectAns(Answer ans){
+        if(ans.getIndex()==correctAnswer)
+            return true;
+        return false;
+    }
+
     public boolean equals(Object obj){
         if(obj instanceof Question) {
             if(index==((Question)obj).getIndex())

@@ -13,7 +13,7 @@ public class QuestionLibrary {
         mQuestions=q;
     }
 
-    public ArrayList<Question> sortQuestion() {
+    private ArrayList<Question> sortQuestion() {
         ArrayList<Question> sortedQuestions = new ArrayList<>();
         for (Question q : mQuestions) {
             if (q.isCategory(category)) {
@@ -25,8 +25,6 @@ public class QuestionLibrary {
 
     public ArrayList<Question> getQuestions(){
         ArrayList<Question> que= new ArrayList<>();
-        int counter=0;
-        Question question;
         ArrayList<Question> sortedQuestions=this.sortQuestion();
         int random;
         boolean flag=false;
