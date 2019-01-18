@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:layout_marginBottom="40dp">
+        android:layout_marginBottom="20dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -34,30 +34,32 @@
             android:id="@+id/score"/>
 
     </RelativeLayout>
+
     <TextView
+        android:id="@+id/question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:layout_marginBottom="20dp"
         android:padding="8dp"
         android:text=""
-        android:layout_marginBottom="40dp"
-        android:id="@+id/question"/>
+        android:textSize="20sp" />
+
     <Button
+        android:id="@+id/choice1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
-        android:textColor="#fff"
-        android:padding="8dp"
         android:layout_marginBottom="24dp"
         android:background="#0091EA"
-        android:id="@+id/choice1"/>
+        android:padding="8dp"
+        android:text=""
+        android:textColor="#fff" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
         android:textColor="#fff"
         android:padding="8dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="20dp"
         android:background="#0091EA"
         android:id="@+id/choice2"/>
     <Button
@@ -66,7 +68,7 @@
         android:text=""
         android:textColor="#fff"
         android:padding="8dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="20dp"
         android:background="#0091EA"
         android:id="@+id/choice3"/>
     <Button
@@ -75,7 +77,7 @@
         android:text=""
         android:textColor="#fff"
         android:padding="8dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="20dp"
         android:background="#0091EA"
         android:id="@+id/choice4"/>
 
