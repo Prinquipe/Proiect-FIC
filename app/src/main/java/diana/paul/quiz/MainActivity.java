@@ -10,9 +10,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import diana.paul.quiz.globals.Globals;
+
 public class MainActivity extends AppCompatActivity {
 
-    private static String cat=null;
+    private Globals globals;
+
+    private String cat=null;
 
     private Button Cat1;
 
@@ -51,17 +55,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openQuiz(){
+        globals.setCategory(cat);
         Intent intent= new Intent(this,QuizActivity.class);
         startActivity(intent);
     }
 
-    private static void setCat(String s){
+    private void setCat(String s){
         cat=s;
     }
-    public static String getCat(){
-        return cat;
-    }
+
     private void init(){
+        globals=Globals.getInstance();
         Cat1=findViewById(R.id.cat1);
         Cat2=findViewById(R.id.cat2);
         Cat3=findViewById(R.id.cat3);

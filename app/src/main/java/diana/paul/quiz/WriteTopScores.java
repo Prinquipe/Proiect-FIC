@@ -63,16 +63,24 @@ public class WriteTopScores {
         }
     }
 
+    public void writeToTopScores(String s,int i){
+                boolean res;
+                String aux=category+":"+s+":"+i;
+                res=tops.writeInTopFile(aux);
+                if(res) {
+                    System.out.println("Sucessfully written in file");
+                }
+                else {
+                    System.out.println("Error at write in file");
+                }
+    }
+
     public ArrayList<String> getName(){
         return name;
     }
 
     public ArrayList<Integer> getScore(){
         return score;
-    }
-
-    public void writeTopScores(String name,int value){
-        tops.writeInTopFile(name+":"+value);
     }
 
     private void sort(ArrayList<String> s,ArrayList<Integer> Int){

@@ -8,6 +8,7 @@
     <string name="cat3">Trivia</string>
     <string name="title_activity_scores">ScoresActivity</string>
     <string name="scores">Score</string>
+    <string name="again">Incearca din nou</string>
 
 
 </resources>

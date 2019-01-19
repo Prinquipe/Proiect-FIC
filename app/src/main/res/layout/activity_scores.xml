@@ -9,7 +9,7 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     android:orientation="vertical"
-    tools:context=".ScoresActivity">
+    >
 
 
     <TextView
@@ -23,9 +23,18 @@
     <TextView
         android:id="@+id/scorelist"
         android:layout_width="308dp"
-        android:layout_height="442dp"
+        android:layout_height="352dp"
         android:layout_alignParentLeft="true"
         android:text=""
         android:textSize="20sp" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/again"
+        android:textColor="#fff"
+        android:padding="8dp"
+        android:layout_marginBottom="24dp"
+        android:background="#0091EA"
+        android:id="@+id/again"/>
 
 </LinearLayout>

@@ -1,5 +1,6 @@
 package diana.paul.quiz;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,10 +10,13 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import diana.paul.quiz.builder.PoolBuilder;
+import diana.paul.quiz.globals.Globals;
 import diana.paul.quiz.library.AnswerLibrary;
 import diana.paul.quiz.library.QuestionLibrary;
 
 public class QuizActivity extends AppCompatActivity {
+
+    private Globals globals;
 
     private ArrayList<Question> mQuiz;
 
@@ -101,10 +105,13 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void startNextActivity(){
-        System.out.println("To be done");
+        globals.setScore(score);
+        Intent intent= new Intent(this,NameActivity.class);
+        startActivity(intent);
     }
 
     private void init(){
+        globals=Globals.getInstance();
         QuestionLibrary mQuestions;
         AnswerLibrary mAnswers;
         PoolBuilder mPool= new PoolBuilder();
@@ -115,10 +122,10 @@ public class QuizActivity extends AppCompatActivity {
         mChoice3=findViewById(R.id.choice3);
         mChoice4=findViewById(R.id.choice4);
         mQuestions=new QuestionLibrary(mPool.getQuestionPool());
-        mQuestions.setCategory(MainActivity.getCat());
+        mQuestions.setCategory(globals.getCategory());
         mQuiz= mQuestions.getQuestions();
         mAnswers= new AnswerLibrary(mPool.getAnswerPool(),mQuiz);
-        mQuestions.setCategory(MainActivity.getCat());
+        mQuestions.setCategory(globals.getCategory());
         mAns=mAnswers.getAnswers();
         updateScreen();
 
